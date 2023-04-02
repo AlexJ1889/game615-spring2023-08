@@ -18,7 +18,7 @@ public class PandaController : MonoBehaviour
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
-        pandaController.Move(transform.forward * 20 * vAxis * Time.deltaTime);
+        pandaController.Move(transform.forward * 20 * hAxis * Time.deltaTime);
     }
 
     public void ThrowBambooButton()
