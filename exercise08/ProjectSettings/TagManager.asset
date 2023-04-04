@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - collectMe
+  - getKey
+  - portal
+  - inflictDamage
+  - owlEnemy1
+  - owlEnemy2
   layers:
   - Default
   - TransparentFX
