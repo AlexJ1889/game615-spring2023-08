@@ -159,11 +159,36 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 14.75, z: 0}
+--- !u!1 &39744347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5bfef178cbbcc45c685e42e89118d8c7, type: 3}
+  m_PrefabInstance: {fileID: 514293197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &39744348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5bfef178cbbcc45c685e42e89118d8c7, type: 3}
   m_PrefabInstance: {fileID: 514293197}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &39744349
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39744347}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3baee150ce8f249a6931e33aa4682f53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &54556302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,6 +2214,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &637717548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5bfef178cbbcc45c685e42e89118d8c7, type: 3}
+  m_PrefabInstance: {fileID: 800351583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &686879987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,7 +3036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bfef178cbbcc45c685e42e89118d8c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 140.965
+      value: -39.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bfef178cbbcc45c685e42e89118d8c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4605,6 +4635,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5bfef178cbbcc45c685e42e89118d8c7, type: 3}
   m_PrefabInstance: {fileID: 800351583}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1322993975
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637717548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a50264ba38da4306bcac70d6874b81f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1330155234
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,7 +5343,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 35
-  m_Acceleration: 20
+  m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -6164,8 +6214,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289032012
-  m_fontColor: {r: 0.29803923, g: 0.43529412, b: 0.64705884, a: 1}
+    rgba: 4287455041
+  m_fontColor: {r: 0.2547151, g: 0.37201807, b: 0.553, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6759,10 +6809,6 @@ PrefabInstance:
     - target: {fileID: 2328094127229740806, guid: 12b211d7a1455483f92144b92d07e42f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2328094127229740806, guid: 12b211d7a1455483f92144b92d07e42f, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4600766595187684398, guid: 12b211d7a1455483f92144b92d07e42f, type: 3}
       propertyPath: m_Name
