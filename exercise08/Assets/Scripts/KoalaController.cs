@@ -9,7 +9,6 @@ public class KoalaController : MonoBehaviour
 
     public Animator koalaAnimator;
 
-    public GameObject leaf;
     public GameObject key;
     public GameObject branches;
     public GameObject launchPos;
@@ -21,7 +20,6 @@ public class KoalaController : MonoBehaviour
 
     public float moveSpeed = 40;
 
-    bool leafPile = false;
     bool pickUpKey = false;
 
     bool haveKey = false;
@@ -41,7 +39,7 @@ public class KoalaController : MonoBehaviour
         //leaf.transform.position = new Vector3 (-120.300003f,73.5999985f,66.6900024f);
 
         GameObject keyObj = Instantiate(key, key.transform.position, Quaternion.identity);
-        key.transform.position = new Vector3(-13.1999998f, 507.600006f, 33.0999985f);
+        key.transform.position = new Vector3(-13.1999998f, 507.600006f, -29.3999996f);
 
         winPanel.SetActive(false);
         losePanel.SetActive(false);
@@ -113,19 +111,10 @@ public class KoalaController : MonoBehaviour
             haveKey = true; 
         }
 
-        if (leafPile == true)
-        {
-            Destroy(GameObject.FindWithTag("collectMe"));
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("collectMe"))
-        {
-            leafPile = true;
- 
-        }
 
         if (other.CompareTag("getKey"))
         {

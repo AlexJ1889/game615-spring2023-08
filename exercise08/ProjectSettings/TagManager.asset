@@ -10,6 +10,8 @@ TagManager:
   - inflictDamage
   - owlEnemy1
   - owlEnemy2
+  - leopardEnemy1
+  - leopardEnemy2
   layers:
   - Default
   - TransparentFX

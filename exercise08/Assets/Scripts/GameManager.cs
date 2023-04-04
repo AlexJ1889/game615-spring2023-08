@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject platform2;
     public GameObject firstPhaseLight;
     public GameObject owlEnemy;
+    public GameObject leopardEnemy; 
 
     bool characterSelected; 
 
@@ -48,16 +49,51 @@ public class GameManager : MonoBehaviour
 
         firstPhaseLight.SetActive(false);
         owlEnemy.SetActive(false);
+        leopardEnemy.SetActive(false);
 
         characterSelected = false;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (characterSelected == false)
         {
             MenuSelection();
+        }
+    }
+
+    public void MenuSelection()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray) == false)
+            {
+                if (selectedPanda != null)
+                {
+                    selectedPanda.selected = false;
+                    selectedPanda.pandaRend.material.color = selectedPanda.defaultColor;
+
+                    selectedPanda = null;
+
+                    booCharacterPanelAnimator.SetTrigger("fadeOut");
+                    titleAnimator.SetTrigger("title_fadeOut");
+                    chooseTxt.SetActive(true);
+                }
+                if (selectedKoala != null)
+                {
+                    selectedKoala.selected = false;
+                    selectedKoala.koalaRend.material.color = selectedKoala.defaultColor;
+
+                    selectedKoala = null;
+
+                    characterPanelAnimator.SetTrigger("fadeOut");
+                    titleAnimator.SetTrigger("title_fadeOut");
+                    chooseTxt.SetActive(true);
+                }
+
+            }
         }
     }
 
@@ -98,6 +134,9 @@ public class GameManager : MonoBehaviour
         platform2.SetActive(true);
 
         pandaPanel.SetActive(true);
+
+        firstPhaseLight.SetActive(true);
+        leopardEnemy.SetActive(true);
     }
 
     public void CameraMovement()
@@ -106,37 +145,5 @@ public class GameManager : MonoBehaviour
             cameraObj.transform.Rotate(8.595f, 91f, 0);
     }
 
-    public void MenuSelection()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray) == false)
-            {
-                if (selectedKoala != null)
-                {
-                    selectedKoala.selected = false;
-                    selectedKoala.koalaRend.material.color = selectedKoala.defaultColor;
-
-                    selectedKoala = null;
-
-                    characterPanelAnimator.SetTrigger("fadeOut");
-                    titleAnimator.SetTrigger("title_fadeOut");
-                    chooseTxt.SetActive(true);
-                }
-
-                if (selectedPanda != null)
-                {
-                    selectedPanda.selected = false;
-                    selectedPanda.pandaRend.material.color = selectedPanda.defaultColor;
-
-                    selectedPanda = null;
-
-                    booCharacterPanelAnimator.SetTrigger("fadeOut");
-                    titleAnimator.SetTrigger("title_fadeOut");
-                    chooseTxt.SetActive(true);
-                }
-            }
-        }
-    }
+  
 }
