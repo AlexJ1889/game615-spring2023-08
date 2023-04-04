@@ -14,3 +14,4 @@ Leaf by Poly by Google [CC-BY] via Poly Pizza
 Key by Poly by Google [CC-BY] via Poly Pizza
 Chest byKenney
 Owl by Poly by Google [CC-BY] via Poly Pizza
+Snow leopard by Poly by Google [CC-BY] via Poly Pizza
