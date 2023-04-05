@@ -2,7 +2,7 @@
  
 by: Alex Reid
 
-[Play Game](https://alexj1889.github.io/game615-spring2023-08/play/)
+Play [Leaf Quest](https://alexj1889.github.io/game615-spring2023-08/play/)
 
 Asset Attribution: 
 
