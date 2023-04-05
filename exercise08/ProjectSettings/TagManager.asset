@@ -12,6 +12,8 @@ TagManager:
   - owlEnemy2
   - leopardEnemy1
   - leopardEnemy2
+  - leaf
+  - owlEnemy
   layers:
   - Default
   - TransparentFX

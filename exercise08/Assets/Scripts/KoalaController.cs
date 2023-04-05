@@ -8,6 +8,7 @@ public class KoalaController : MonoBehaviour
     GameManager gm;
 
     public Animator koalaAnimator;
+    public Animator booPanelAnimator;
 
     public GameObject key;
     public GameObject branches;
@@ -43,6 +44,8 @@ public class KoalaController : MonoBehaviour
 
         winPanel.SetActive(false);
         losePanel.SetActive(false);
+
+        booPanelAnimator.SetTrigger("fadeOut");
     }
     
     // Update is called once per frame

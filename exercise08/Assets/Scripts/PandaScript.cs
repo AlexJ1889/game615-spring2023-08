@@ -14,6 +14,8 @@ public class PandaScript : MonoBehaviour
 
     GameManager gameManager;
 
+    public Animator pandaAnim; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class PandaScript : MonoBehaviour
 
         GameObject gameObj = GameObject.Find("GameManager");
         gameManager = gameObj.GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
@@ -55,12 +58,15 @@ public class PandaScript : MonoBehaviour
 
         selected = true;
         pandaRend.material.color = selectedColor;
+        
+
 
         if (gameManager.selectedPanda == null)
         {
             gameManager.booCharacterPanelAnimator.SetTrigger("boo_fadeIn");
             gameManager.titleAnimator.SetTrigger("title_fadeIn");
             gameManager.chooseTxt.SetActive(false);
+            //pandaAnim.SetBool("selected", true);
         }
     }
 }

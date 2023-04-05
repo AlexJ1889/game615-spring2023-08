@@ -25,9 +25,17 @@ public class GameManager : MonoBehaviour
     public GameObject platform2;
     public GameObject firstPhaseLight;
     public GameObject owlEnemy;
-    public GameObject leopardEnemy; 
+    public GameObject leopardEnemy;
+    
 
-    bool characterSelected; 
+    bool characterSelected;
+    
+    public GameObject leafFloor;
+    public int leavesPerLoop;
+    public float spawnDelay = 1f;
+
+    private GameObject[] clones;
+    private bool shouldStopLoop = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +60,10 @@ public class GameManager : MonoBehaviour
         leopardEnemy.SetActive(false);
 
         characterSelected = false;
+
+        clones = new GameObject[leavesPerLoop];
+        StartCoroutine(CreateClones());
+
     }
 
     // Update is called once per frame
@@ -61,10 +73,45 @@ public class GameManager : MonoBehaviour
         {
             MenuSelection();
         }
+
+        
+
+    }
+
+    private IEnumerator CreateClones()
+    {
+        for (int i=0; i < leavesPerLoop; i++)
+        {
+            float leafFloorX = Random.Range(258.3f, -233.3f);
+            float leafFloorY = 0;
+            float leafFloorZ = Random.Range(208.7f, -291f);
+            float rotXAmount = Random.Range(0, 360);
+            float rotYAmount = 0;
+            float rotZAmount = Random.Range(0, 360);
+            clones[i] = Instantiate(leafFloor, transform.position, Quaternion.identity);
+            transform.position = new Vector3(leafFloorX, leafFloorY, leafFloorZ);
+            clones[i].transform.Rotate(rotXAmount, rotYAmount, rotZAmount);
+
+            yield return null;
+
+            if (shouldStopLoop)
+            {
+                break;
+            }
+        }
+    }
+
+    private void DestroyClones()
+    {
+        for (int i=0; i < clones.Length; i++)
+        {
+            Destroy(clones[i]);
+        }
     }
 
     public void MenuSelection()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -81,6 +128,7 @@ public class GameManager : MonoBehaviour
                     titleAnimator.SetTrigger("title_fadeOut");
                     chooseTxt.SetActive(true);
                 }
+
                 if (selectedKoala != null)
                 {
                     selectedKoala.selected = false;
@@ -117,6 +165,10 @@ public class GameManager : MonoBehaviour
 
         firstPhaseLight.SetActive(true);
         owlEnemy.SetActive(true);
+
+        shouldStopLoop = true;
+        DestroyClones();
+        RenderSettings.fog = false;
     }
 
     public void BooSelectButton()
@@ -135,8 +187,14 @@ public class GameManager : MonoBehaviour
 
         pandaPanel.SetActive(true);
 
+        characterSelected = true;
+
         firstPhaseLight.SetActive(true);
         leopardEnemy.SetActive(true);
+
+        shouldStopLoop = true;
+        DestroyClones();
+        RenderSettings.fog = false;
     }
 
     public void CameraMovement()
@@ -144,6 +202,5 @@ public class GameManager : MonoBehaviour
             cameraObj.transform.position = new Vector3(302.967773f, 587.84f, -28.8339901f);
             cameraObj.transform.Rotate(8.595f, 91f, 0);
     }
-
   
 }

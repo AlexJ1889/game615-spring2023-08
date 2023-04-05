@@ -45,7 +45,7 @@ public class PandaController : MonoBehaviour
     {
         float hAxis = Input.GetAxis("Horizontal");
 
-        pandaController.Move(transform.forward * 20 * hAxis * Time.deltaTime);
+        pandaController.Move(transform.forward * moveSpeed * hAxis * Time.deltaTime);
     }
 
         public void ThrowBambooButton()
