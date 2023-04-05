@@ -78,9 +78,8 @@ public class GameManager : MonoBehaviour
         if (characterSelected == false)
         {
             MenuSelection();
+            
         }
-
-        
 
     }
 
@@ -93,7 +92,7 @@ public class GameManager : MonoBehaviour
             float leafFloorZ = Random.Range(208.7f, -291f);
             float rotXAmount = Random.Range(0, 360);
             float rotYAmount = 0;
-            float rotZAmount = Random.Range(0, 360);
+            float rotZAmount = Random.Range(268, -268);
             clones[i] = Instantiate(leafFloor, transform.position, Quaternion.identity);
             transform.position = new Vector3(leafFloorX, leafFloorY, leafFloorZ);
             clones[i].transform.Rotate(rotXAmount, rotYAmount, rotZAmount);

@@ -44,7 +44,6 @@ public class KoalaScript : MonoBehaviour
         if (selected == false)
         {
             koalaRend.material.color = defaultColor;
-            Debug.Log("thats that");
         }
     }
 
