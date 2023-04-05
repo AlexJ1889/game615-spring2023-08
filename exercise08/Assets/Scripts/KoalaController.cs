@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class KoalaController : MonoBehaviour
 {
@@ -9,13 +10,14 @@ public class KoalaController : MonoBehaviour
 
     public Animator koalaAnimator;
     public Animator booPanelAnimator;
-
+    
     public GameObject key;
     public GameObject branches;
     public GameObject launchPos;
     public GameObject finalPhaseCam;
     public GameObject winPanel;
     public GameObject losePanel;
+    public GameObject lastLight; 
 
     public float launchForce;
 
@@ -45,7 +47,7 @@ public class KoalaController : MonoBehaviour
         winPanel.SetActive(false);
         losePanel.SetActive(false);
 
-        booPanelAnimator.SetTrigger("fadeOut");
+        lastLight.SetActive(true);
     }
     
     // Update is called once per frame
@@ -134,8 +136,9 @@ public class KoalaController : MonoBehaviour
     {
         if(collision.gameObject.tag == "owlEnemy1")
         {
-            Destroy(GameObject.FindWithTag("Player"));
+            //Destroy(GameObject.FindWithTag("Player"));
             losePanel.SetActive(true);
+
         }
 
         if (collision.gameObject.tag == "owlEnemy2")

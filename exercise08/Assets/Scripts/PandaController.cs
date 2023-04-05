@@ -84,7 +84,7 @@ public class PandaController : MonoBehaviour
     {
         if (collision.gameObject.tag == "leopardEnemy1")
         {
-            Destroy(GameObject.FindWithTag("Player"));
+            //Destroy(GameObject.FindWithTag("Player"));
             losePanel.SetActive(true);
         }
 

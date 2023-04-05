@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     public Animator characterPanelAnimator;
     public Animator booCharacterPanelAnimator; 
     public Animator titleAnimator;
+    public Animator marsAnimator;
+    public Animator booAnimator;
 
     public GameObject chooseTxt;
     public GameObject koalaPanel;
     public GameObject pandaPanel;
+    public GameObject booPanel;
     public GameObject cameraObj;
     public GameObject pandaCharacter;
     public GameObject koalaCharacter;
@@ -39,7 +42,8 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+
         chooseTxt.SetActive(true);
         cameraObj.transform.position = new Vector3 (-1.11814857f, 18.9626865f, 227.366669f);
 
@@ -56,10 +60,12 @@ public class GameManager : MonoBehaviour
         pandaPanel.SetActive(false);
 
         firstPhaseLight.SetActive(false);
+        
         owlEnemy.SetActive(false);
         leopardEnemy.SetActive(false);
 
         characterSelected = false;
+        booPanel.SetActive(true);
 
         clones = new GameObject[leavesPerLoop];
         StartCoroutine(CreateClones());
@@ -123,6 +129,7 @@ public class GameManager : MonoBehaviour
                     selectedPanda.pandaRend.material.color = selectedPanda.defaultColor;
 
                     selectedPanda = null;
+                    booAnimator.SetBool("selected", false);
 
                     booCharacterPanelAnimator.SetTrigger("fadeOut");
                     titleAnimator.SetTrigger("title_fadeOut");
@@ -135,10 +142,12 @@ public class GameManager : MonoBehaviour
                     selectedKoala.koalaRend.material.color = selectedKoala.defaultColor;
 
                     selectedKoala = null;
+                    marsAnimator.SetBool("isSelected", false);
 
                     characterPanelAnimator.SetTrigger("fadeOut");
                     titleAnimator.SetTrigger("title_fadeOut");
                     chooseTxt.SetActive(true);
+
                 }
 
             }
@@ -147,6 +156,8 @@ public class GameManager : MonoBehaviour
 
     public void MarsSelectButton()
     {
+        booPanel.SetActive(false);
+
         CameraMovement();
 
         characterPanelAnimator.SetTrigger("fadeOut");

@@ -19,12 +19,15 @@ public class EnemyScript : MonoBehaviour
 
     private int currentHealth;
 
-
+    private GameObject playerRef;
 
     // Start is called before the first frame update
     void Start()
     {
         //Enemy2.SetActive(false);
+
+        predAgent1 = GetComponent<NavMeshAgent>();
+        playerRef = GameObject.FindGameObjectWithTag("Player");
 
         currentHealth = maxHealth;
         
@@ -33,8 +36,10 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        predAgent1.SetDestination(player.position);
-
+        if(playerRef != null)
+        {
+            predAgent1.SetDestination(player.position);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,7 +72,19 @@ public class EnemyScript : MonoBehaviour
         transform.position = respawnSpot;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(collision.gameObject);
+            playerRef = null;
+        }
+    }
 
+    //void StopEnemyMovement()
+    //{
+    //    predAgent1.isStopped = true;
+    //}
 
     //Enemy2.SetActive(true);
 
@@ -82,6 +99,6 @@ public class EnemyScript : MonoBehaviour
 
     //        respawn = true;
 
-       
-    
- }
+
+
+}

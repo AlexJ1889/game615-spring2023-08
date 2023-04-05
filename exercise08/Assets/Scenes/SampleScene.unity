@@ -1923,6 +1923,7 @@ MonoBehaviour:
   finalPhaseCam: {fileID: 963194225}
   winPanel: {fileID: 64364072}
   losePanel: {fileID: 462553301}
+  lastLight: {fileID: 1133141973}
   launchForce: 6500
   moveSpeed: 40
   disableMovement: 0
@@ -1997,9 +1998,12 @@ MonoBehaviour:
   characterPanelAnimator: {fileID: 1083939902}
   booCharacterPanelAnimator: {fileID: 629034254}
   titleAnimator: {fileID: 970897376}
+  marsAnimator: {fileID: 1985759564}
+  booAnimator: {fileID: 778951354}
   chooseTxt: {fileID: 1427775905}
   koalaPanel: {fileID: 686879987}
   pandaPanel: {fileID: 759351476}
+  booPanel: {fileID: 629034248}
   cameraObj: {fileID: 963194225}
   pandaCharacter: {fileID: 778951349}
   koalaCharacter: {fileID: 1985759559}
@@ -4276,8 +4280,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133141973}
-  m_LocalRotation: {x: 0.0010581624, y: -0.70922214, z: 0.001063105, w: 0.7049836}
-  m_LocalPosition: {x: 491.2203, y: 1095.3037, z: 27.731134}
+  m_LocalRotation: {x: -0.13959302, y: 0.69079065, z: -0.1385917, w: -0.6957834}
+  m_LocalPosition: {x: 286.23566, y: 1088.6224, z: -45.933685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7040,6 +7044,7 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 0, b: 0, a: 0.24313726}
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
   selected: 0
+  koalaAnim: {fileID: 1985759564}
 --- !u!65 &1985759562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7053,6 +7058,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.35345, y: 18.895046, z: 28.92558}
   m_Center: {x: -0.11223793, y: 8.947523, z: 1.8028336}
+--- !u!95 &1985759564
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985759559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efec8e15b52cd4d6db4f13b7be90f1c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2041900785
 GameObject:
   m_ObjectHideFlags: 0
@@ -7223,7 +7248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6012317478594631060, guid: f2fc8159c12a245cdbbd6401881b0af6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.5
+      value: 24.1
       objectReference: {fileID: 0}
     - target: {fileID: 6012317478594631060, guid: f2fc8159c12a245cdbbd6401881b0af6, type: 3}
       propertyPath: m_LocalPosition.y

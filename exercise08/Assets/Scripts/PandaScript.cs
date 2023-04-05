@@ -29,7 +29,7 @@ public class PandaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     private void OnMouseEnter()
@@ -54,19 +54,22 @@ public class PandaScript : MonoBehaviour
         {
             gameManager.selectedPanda.selected = false;
             gameManager.selectedPanda.pandaRend.material.color = gameManager.selectedPanda.defaultColor;
+            
         }
 
         selected = true;
         pandaRend.material.color = selectedColor;
-        
 
-
-        if (gameManager.selectedPanda == null)
+        if (gameManager.selectedPanda == false)
         {
+            
             gameManager.booCharacterPanelAnimator.SetTrigger("boo_fadeIn");
             gameManager.titleAnimator.SetTrigger("title_fadeIn");
             gameManager.chooseTxt.SetActive(false);
-            //pandaAnim.SetBool("selected", true);
+            pandaAnim.SetBool("selected", true);
         }
+
+        gameManager.selectedPanda = this;
+
     }
 }

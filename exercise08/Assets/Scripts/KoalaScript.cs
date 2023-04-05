@@ -12,7 +12,9 @@ public class KoalaScript : MonoBehaviour
 
     public bool selected = false;
 
-    GameManager gm; 
+    GameManager gm;
+
+    public Animator koalaAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class KoalaScript : MonoBehaviour
         if (selected == false)
         {
             koalaRend.material.color = defaultColor;
+            Debug.Log("thats that");
         }
     }
 
@@ -61,6 +64,7 @@ public class KoalaScript : MonoBehaviour
             gm.characterPanelAnimator.SetTrigger("fadeIn");
             gm.titleAnimator.SetTrigger("title_fadeIn");
             gm.chooseTxt.SetActive(false);
+            koalaAnim.SetBool("isSelected", true);
         }
 
         gm.selectedKoala = this;
